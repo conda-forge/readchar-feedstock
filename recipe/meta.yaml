@@ -1,13 +1,13 @@
 {% set name = "readchar" %}
-{% set version = "2.0.0" %}
+{% set version = "3.0.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/magmax/python-{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 503c96fbdaa5e96162535dc0a8fb8525582a18a42214909d751f150c8029d694
+  url: https://github.com/magmax/python-{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: 7537d37064b7aceef4d49b949d76ff32fa0869ee700f1bba8db724fc1209c5b0
 
 build:
   number: 0
