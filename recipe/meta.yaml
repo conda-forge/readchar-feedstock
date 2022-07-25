@@ -1,18 +1,19 @@
-{% set name = "readchar" %}
 {% set version = "3.1.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: readchar
   version: {{ version }}
 
 source:
-  url: https://github.com/magmax/python-{{ name }}/archive/v{{ version }}.tar.gz
+  url: https://github.com/magmax/python-readchar/archive/v{{ version }}.tar.gz
   sha256: 3b517e754f49421439cd1ae8fa31f9304d6c19603af47339b1b15a7ff25331f6
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  script_env:
+   - GITHUB_REF=refs/tags/v{{ version }}
 
 requirements:
   host:
@@ -23,8 +24,14 @@ requirements:
     - python >=3.6
 
 test:
+  requires:
+    - pip
+    - m2-git  # [win]
   imports:
     - readchar
+  commands:
+    - pip check
+    - pip list | grep -iE "readchar\s+{{ version.replace('.', '\.') }}"
 
 about:
   home: https://github.com/magmax/python-readchar
