@@ -1,11 +1,11 @@
-About readchar
-==============
+About readchar-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/readchar-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/magmax/python-readchar
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/readchar-feedstock/blob/main/LICENSE.txt)
 
 Summary: Library to easily read single chars and key strokes.
 
