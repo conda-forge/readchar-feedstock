@@ -1,5 +1,5 @@
 {% set name = "readchar" %}
-{% set version = "4.1.0" %}
+{% set version = "4.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/magmax/python-{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 125beb35bc1ef87ca75f7d31b11e1aa81916460888ab1ac0545760f9ecb882e1
+  sha256: 48f5810991ecd71c29d390b4489f130dc84fa5922096262e2a0f4418e5e83b0c
 
 build:
   number: 0
