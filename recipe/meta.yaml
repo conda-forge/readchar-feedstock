@@ -8,23 +8,35 @@ package:
 source:
   url: https://github.com/magmax/python-{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 48f5810991ecd71c29d390b4489f130dc84fa5922096262e2a0f4418e5e83b0c
+  patches:
+    # https://github.com/magmax/python-readchar/issues/122
+    - fix_wrong_version.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
+  script_env:
+   - GITHUB_REF=refs/tags/v{{ version }}
 
 requirements:
   host:
+    - python >=3.8
     - pip
-    - python >=3.6
+    - setuptools
     - flake8
   run:
-    - python >=3.6
+    - python >=3.8
 
 test:
+  requires:
+    - pip
+    - m2-git  # [win]
   imports:
     - readchar
+  commands:
+    - pip check
+    - pip list | grep -iE "readchar\s+{{ version.replace('.', '\.') }}"
 
 about:
   home: https://github.com/magmax/python-readchar
