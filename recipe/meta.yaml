@@ -1,5 +1,5 @@
 {% set name = "readchar" %}
-{% set version = "4.2.0" %}
+{% set version = "4.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,17 +7,17 @@ package:
 
 source:
   url: https://github.com/magmax/python-{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 48f5810991ecd71c29d390b4489f130dc84fa5922096262e2a0f4418e5e83b0c
+  sha256: 2c3a6eb9a41c228ab8324b7abaff7a91ec5c8c450b5b81f0853b6f0855b9e692
   patches:
     # https://github.com/magmax/python-readchar/issues/122
     - fix_wrong_version.patch
 
 build:
-  number: 1
+  number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   script_env:
-   - GITHUB_REF=refs/tags/v{{ version }}
+    - GITHUB_REF=refs/tags/v{{ version }}
 
 requirements:
   host:
