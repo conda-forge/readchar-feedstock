@@ -7,7 +7,7 @@ Home: https://github.com/magmax/python-readchar
 
 Package license: MIT
 
-Summary: Library to easily read single chars and key strokes.
+Summary: Library to easily read single chars and key strokes
 
 Current build status
 ====================
@@ -147,4 +147,5 @@ Feedstock Maintainers
 * [@mxr-conda](https://github.com/mxr-conda/)
 * [@oblute](https://github.com/oblute/)
 * [@rluria14](https://github.com/rluria14/)
+* [@thewchan](https://github.com/thewchan/)
 
