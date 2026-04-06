@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: readchar
-  version: 4.2.1
+  version: "4.2.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/readchar-${{ version }}.tar.gz
-  sha256: 91ce3faf07688de14d800592951e5575e9c7a3213738ed01d394dcc949b79adb
+  sha256: e3b270fe16fc90c50ac79107700330a133dd4c63d22939f5b03b4f24564d5dd8
 
 build:
   number: 0
@@ -30,7 +30,9 @@ tests:
       imports:
         - readchar
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   homepage: https://github.com/magmax/python-readchar
